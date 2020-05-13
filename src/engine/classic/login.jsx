@@ -28,6 +28,7 @@ import * as i18n from '../../i18n';
 
 function shouldRenderTabs(m) {
   if (isSSOEnabled(m)) return false;
+  if (signUpLink(m,false)) return true;
   if (l.hasSomeConnections(m, 'database')) return hasScreen(m, 'signUp');
   if (l.hasSomeConnections(m, 'social') && hasInitialScreen(m, 'signUp'))
     return hasScreen(m, 'signUp');
